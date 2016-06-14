@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tic Tac To3-D</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"> </script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,300italic,500,400italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <h1>Tic Tac To3-D</h1>
+    </header>
+    <main>
+      <section class="score">
+        <div class="score_content">
+                <a href="#" class="button score" title="player 1 score">Score</a>
+                <a href="#" class="button player">Player 1</a>
+                <a href="#" class="button timer" title="Timer">Timer</a>
+                <a href="#" class="button player" title="Player 2/Comp">Player 2/Comp</a>
+                <a href="#" class="button Score">Score</a>
+        </div>
+      </section>
+
+        <div id="cube-container">
+          <div id="cube-viewport">
+            <div id="cube">
+            <!-- UP FACE -->
+                <!-- LEFT COLUMN (L)  -->
+                <div class="utl cubie up LM UE BS"><div><span>U1</span></div></div>
+                <div class="ucl cubie up LM UE CS"><div><span>U2</span></div></div>
+                <div class="ubl cubie up LM UE FS"><div><span>U3</span></div></div>
+                <!-- CENTER COLUMN (C)  -->
+                <div class="utc cubie up CM UE BS"><div><span>U4</span></div></div>
+                <div class="ucc cubie up CM UE CS"><div><span>U5</span></div></div>
+                <div class="ubc cubie up CM UE FS"><div><span>U6</span></div></div>
+                <!-- RIGHT COLUMN (R)  -->
+                <div class="utr cubie up RM UE BS"><div><span>U7</span></div></div>
+                <div class="ucr cubie up RM UE CS"><div><span>U8</span></div></div>
+                <div class="ubr cubie up RM UE FS"><div><span>U9</span></div></div>
+            <!-- END UP FACE -->
+
+            <!-- FRONT FACE -->
+                <!-- LEFT COLUMN (L)  -->
+                <div class="cell 0 ftl cubie front LM UE FS" onClick="setCell(0)"><div><span>F1</span></div></div>
+                <!-- <a href="#" class="button ftl cubie front LM UE FS">F1</a> -->
+                <div class="fcl cubie front LM CE FS cell 3" onClick="setCell(3)"><div><span>F2</span></div></div>
+                <!-- <a href="#" class="button fcl cubie front LM CE FS">F2</a> -->
+                <div class="fbl cubie front LM DE FS cell 6" onClick="setCell(6)"><div><span>F3</span></div></div>
+                <!-- <a href="#" class="button fbl cubie front LM CE FS">F3</a> -->
+                <!-- CENTER COLUMN (C)  -->
+                <div class="ftc cubie front CM UE FS cell 1" onClick="setCell(1)"><div><span>F4</span></div></div>
+                <!-- <a href="#" class="button ftc cubie front LM CE FS">F4</a> -->
+                <div class="fcc cubie front CM CE FS cell 4" onClick="setCell(4)"><div><span>F5</span></div></div>
+                <!-- <a href="#" class="button fcc cubie front LM CE FS">F5</a> -->
+                <div class="fbc cubie front CM DE FS cell 7" onClick="setCell(7)"><div><span>F6</span></div></div>
+                <!-- <a href="#" class="button fbc cubie front LM CE FS">F6</a> -->
+                <!-- RIGHT COLUMN (R)  -->
+                <div class="ftr cubie front RM UE FS cell 2" onClick="setCell(2)"><div><span>F7</span></div></div>
+                <!-- <a href="#" class="button ftr cubie front LM CE FS">F7</a> -->
+                <div class="fcr cubie front RM CE FS cell 5" onClick="setCell(5)"><div><span>F8</span></div></div>
+                <!-- <a href="#" class="button fcr cubie front LM CE FS">F8</a> -->
+                <div class="fbr cubie front RM DE FS cell 8" onClick="setCell(8)"><div><span>F9</span></div></div>
+                <!-- <a href="#" class="button fbr cubie front LM CE FS">F9</a> -->
+            <!-- END FRONT FACE -->
+
+            <!--DOWN FACE -->
+                <!-- LEFT COLUMN (L)  -->
+                <div class="dtl cubie down LM DE FS"><div><span>D1</span></div></div>
+                <div class="dcl cubie down LM DE CS"><div><span>D2</span></div></div>
+                <div class="dbl cubie down LM DE BS"><div><span>D3</span></div></div>
+                <!-- CENTER COLUMN (C)  -->
+                <div class="dtc cubie down CM DE FS"><div><span>D4</span></div></div>
+                <div class="dcc cubie down CM DE CS"><div><span>D5</span></div></div>
+                <div class="dbc cubie down CM DE BS"><div><span>D6</span></div></div>
+                <!-- RIGHT COLUMN (R)  -->
+                <div class="dtr cubie down RM DE FS"><div><span>D7</span></div></div>
+                <div class="dcr cubie down RM DE CS"><div><span>D8</span></div></div>
+                <div class="dbr cubie down RM DE BS"><div><span>D9</span></div></div>
+            <!-- END DOWN FACE -->
+
+            <!--BACK FACE -->
+                <!-- LEFT COLUMN (L)  -->
+                <div class="btl cubie back LM DE BS"><div><span>B1</span></div></div>
+                <div class="bcl cubie back LM CE BS"><div><span>B2</span></div></div>
+                <div class="bbl cubie back LM UE BS"><div><span>B3</span></div></div>
+                <!-- CENTER COLUMN (C)  -->
+                <div class="btc cubie back CM DE BS"><div><span>B4</span></div></div>
+                <div class="bcc cubie back CM CE BS"><div><span>B5</span></div></div>
+                <div class="bbc cubie back CM UE BS"><div><span>B6</span></div></div>
+                <!-- RIGHT COLUMN (R)  -->
+                <div class="btr cubie back RM DE BS"><div><span>B7</span></div></div>
+                <div class="bcr cubie back RM CE BS"><div><span>B8</span></div></div>
+                <div class="bbr cubie back RM UE BS"><div><span>B9</span></div></div>
+            <!--END BOTTOM FACE -->
+
+            <!--LEFT FACE -->
+                <!-- LEFT COLUMN (L)  -->
+                <div class="ltl cubie left LM UE BS"><div><span>L1</span></div></div>
+                <div class="lcl cubie left LM CE BS"><div><span>L2</span></div></div>
+                <div class="lbl cubie left LM DE BS"><div><span>L3</span></div></div>
+                <!-- CENTER COLUMN (C)  -->
+                <div class="ltc cubie left LM UE CS"><div><span>L4</span></div></div>
+                <div class="lcc cubie left LM CE CS"><div><span>L5</span></div></div>
+                <div class="lbc cubie left LM DE CS"><div><span>L6</span></div></div>
+                <!-- RIGHT COLUMN (R)  -->
+                <div class="ltr cubie left LM UE FS"><div><span>L7</span></div></div>
+                <div class="lcr cubie left LM CE FS"><div><span>L8</span></div></div>
+                <div class="lbr cubie left LM DE FS"><div><span>L9</span></div></div>
+            <!--END LEFT FACE -->
+
+            <!--RIGHT FACE -->
+                <!-- LEFT COLUMN (L)  -->
+                <div class="rtl cubie right RM UE FS"><div><span>R1</span></div></div>
+                <div class="rcl cubie right RM CE FS"><div><span>R2</span></div></div>
+                <div class="rbl cubie right RM DE FS"><div><span>R3</span></div></div>
+                <!-- CENTER COLUMN (C)  -->
+                <div class="rtc cubie right RM UE CS"><div><span>R4</span></div></div>
+                <div class="rcc cubie right RM CE CS"><div><span>R5</span></div></div>
+                <div class="rbc cubie right RM DE CS"><div><span>R6</span></div></div>
+                <!-- RIGHT COLUMN (R)  -->
+                <div class="rtr cubie right RM UE BS"><div><span>R7</span></div></div>
+                <div class="rcr cubie right RM CE BS"><div><span>R8</span></div></div>
+                <div class="rbr cubie right RM DE BS"><div><span>R9</span></div></div>
+            <!--END LEFT FACE -->
+
+             </div>
+          </div>
+        </div>
+          <div class="options">
+
+            <button class="restart button" onClick="init()">Restart</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="social_media">
+        <a href="https://www.facebook.com"><img src="images/fb.png" alt="facebook"></a>
+        <a href="https://www.linkedin.com"><img src="images/linkedin.png" alt="linkedin"></a>
+        <a href="https://www.twitter.com"><img src="images/twitter.png" alt="twitter"></a>
+      </div>
+        <p>Powered by your Brain!</p>
+    </footer>
+  </body>
+</html>
